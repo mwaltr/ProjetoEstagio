@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using WebApplication2.Models;
+using MySql.Data.MySqlClient;
 
 namespace WebApplication2.Controllers
 {
+    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -23,6 +23,28 @@ namespace WebApplication2.Controllers
            int texto = 11;
 
             return View(texto);
+        }
+        public IActionResult Formulario()
+        {
+            string cs = @"server=127.0.0.1;userid=root;password=root;database=teste";
+            using var con = new MySqlConnection(cs);
+            con.Open();
+            MySqlCommand query= new MySqlCommand();
+            query.Connection = con;
+            query.CommandText = "INSERT INTO tabela1 (id , col) VALUES(3,10);";
+            query.Prepare();
+            query.ExecuteNonQuery();
+            query.CommandText = "SELECT * FROM tabela1;";
+            query.Prepare();
+            
+
+            ViewData["mysql"] = query.ExecuteNonQuery();
+
+
+
+            ViewData["Formulario"] = Request.Form["Email"];
+
+            return View();
         }
 
         public IActionResult Privacy()
