@@ -19,10 +19,24 @@ namespace WebApplication2.Controllers
         }
 
         public IActionResult Index()
-        { 
-           int texto = 11;
+        {
+            string login = Request.Form["login"];
+            string senha = Request.Form["senha"];
+           
+            string cs = @"server=127.0.0.1;userid=root;password=root;database=estagio";
+            using var con = new MySqlConnection(cs);
+            con.Open();
+            MySqlCommand query = new MySqlCommand();
+            query.Connection = con;
+            string sql = "SELECT * FROM Login WHERE login =" +login + " AND password ="+senha ;
+            query.CommandText = sql;
+                        
 
-            return View(texto);
+            query.Prepare();
+            ViewData["mysql2"] = query.ExecuteNonQuery();
+           
+
+            return View();
         }
         public IActionResult Formulario()
         {
@@ -53,17 +67,7 @@ namespace WebApplication2.Controllers
         }
         public IActionResult Conteudo()
         {
-            ModelDep modeldep = new ModelDep();
-
-            List<ControllerTeste> list = new List<ControllerTeste>();
-            list.Add(new ControllerTeste { Id = 1, Name = "elet" });
-            list.Add(new ControllerTeste { Id = 2, Name = "elestroma" });
-
-            var r2 = list.Where( p => p.Name == "elet").Select(p => p.Name);
-
-            ViewData["Title"] = modeldep.ModDep();
-            ViewData["List"] = r2;
-
+          
             return View();
         }
 
