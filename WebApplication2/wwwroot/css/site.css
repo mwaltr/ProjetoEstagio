@@ -12,6 +12,12 @@ a {
   color: #0366d6;
 }
 
+.div-login{
+
+    margin : auto;
+    width :35%;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
