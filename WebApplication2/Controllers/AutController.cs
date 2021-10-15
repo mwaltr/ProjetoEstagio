@@ -64,6 +64,16 @@ namespace WebApplication2.Controllers
         }
         public IActionResult AutenticacaoRegistro()
         {
+            string[] post = new string[5];
+            post[0]=  Request.Form["login"];
+            post[1] = Request.Form["senha"];
+            post[2] = Request.Form["repetirsenha"];
+            post[3] = Request.Form["nome"];
+            post[4] = Request.Form["email"];
+            post[5] = Request.Form["repetiremail"];
+
+
+
 
 
             return View();
