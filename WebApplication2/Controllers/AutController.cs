@@ -16,13 +16,17 @@ namespace WebApplication2.Controllers
 
         public IActionResult Login()
         {
+         
+
             ViewData["SQLLogin"] = rlogin;
             return View();
         }
 
         public IActionResult Autenticacao()
         {
-            String login =Request.Form["login"];
+             
+
+            String login = Request.Form["login"];
             String senha = Request.Form["senha"];
             string cs = @"server=127.0.0.1;userid=root;password=root;database=estagio";
             using var con = new MySqlConnection(cs);
@@ -40,9 +44,11 @@ namespace WebApplication2.Controllers
             else
             {
                 rlogin = "Login Efetuado com sucesso";
+              
+               
+
                 Response.Redirect("/home");
             }
-
             /*
             MySqlDataReader reader = query.ExecuteReader();
             while (reader.Read() )
@@ -52,9 +58,6 @@ namespace WebApplication2.Controllers
                 }
             }
             */
-
-
-
 
             return View();
         }
@@ -80,6 +83,10 @@ namespace WebApplication2.Controllers
                 query.ExecuteNonQuery();
                 Response.Redirect("/home");
 
+            }
+            else
+            {
+                Response.Redirect("Registro");
             }
 
 

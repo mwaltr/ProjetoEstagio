@@ -8,14 +8,26 @@ using MySql.Data.MySqlClient;
 
 namespace WebApplication2.Controllers
 {
-    
+
     public class HomeController : Controller
     {
+        public string logged ="";
+        public string Logged
+        {
+            get{ return logged; }
+            set{ logged = value; }
+        }
+
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+        }
+
+        public HomeController()
+        {
         }
 
         public IActionResult Index()
@@ -26,6 +38,7 @@ namespace WebApplication2.Controllers
         }
         public IActionResult Formulario()
         {
+           
             string cs = @"server=127.0.0.1;userid=root;password=root;database=teste";
             using var con = new MySqlConnection(cs);
             con.Open();
