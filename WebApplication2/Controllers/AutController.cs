@@ -16,10 +16,7 @@ namespace WebApplication2.Controllers
 
         public IActionResult Login()
         {
-            
-
             ViewData["SQLLogin"] = rlogin;
-
             return View();
         }
 
@@ -41,7 +38,6 @@ namespace WebApplication2.Controllers
                 Response.Redirect("login");
             }
             else
-                
             {
                 rlogin = "Login Efetuado com sucesso";
                 Response.Redirect("/home");
@@ -64,13 +60,27 @@ namespace WebApplication2.Controllers
         }
         public IActionResult AutenticacaoRegistro()
         {
-            string[] post = new string[5];
-            post[0]=  Request.Form["login"];
-            post[1] = Request.Form["senha"];
-            post[2] = Request.Form["repetirsenha"];
-            post[3] = Request.Form["nome"];
-            post[4] = Request.Form["email"];
-            post[5] = Request.Form["repetiremail"];
+            string[] post = new string[6] {
+             Request.Form["login"] ,
+             Request.Form["senha"] ,
+             Request.Form["repetirsenha"] ,
+             Request.Form["nome"] ,
+             Request.Form["email"] ,
+             Request.Form["repetiremail"]
+                };
+            if(  (post[1] == post[2]) && (post[4] == post[5])  )
+            {
+                string cs = @"server=127.0.0.1;userid=root;password=root;database=estagio";
+                using var con = new MySqlConnection(cs);
+                MySqlCommand query = new MySqlCommand();
+                con.Open();
+                query.Connection = con;
+                query.CommandText = "INSERT INTO login (login , senha , email , nome ) VALUES( '"+ post[0] + "' , '"+ post[1] + "' , '"+ post[3]+ "' , '"+ post[4] +"' ) ";
+                query.Prepare();
+                query.ExecuteNonQuery();
+                Response.Redirect("/home");
+
+            }
 
 
 

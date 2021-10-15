@@ -308,3 +308,4 @@ C:\GitHub\Git\ProjetoEstagio\WebApplication2\obj\Debug\netcoreapp3.1\WebApplicat
 C:\GitHub\Git\ProjetoEstagio\WebApplication2\obj\Debug\netcoreapp3.1\Razor\Views\Aut\Login.cshtml.g.cs
 C:\GitHub\Git\ProjetoEstagio\WebApplication2\obj\Debug\netcoreapp3.1\Razor\Views\Aut\Autenticacao.cshtml.g.cs
 C:\GitHub\Git\ProjetoEstagio\WebApplication2\obj\Debug\netcoreapp3.1\Razor\Views\Aut\Registro.cshtml.g.cs
+C:\GitHub\Git\ProjetoEstagio\WebApplication2\obj\Debug\netcoreapp3.1\Razor\Views\Aut\AutenticacaoRegistro.cshtml.g.cs
