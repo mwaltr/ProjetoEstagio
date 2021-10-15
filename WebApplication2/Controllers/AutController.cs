@@ -16,7 +16,7 @@ namespace WebApplication2.Controllers
 
         public IActionResult Login()
         {
-         
+           
 
             ViewData["SQLLogin"] = rlogin;
             return View();

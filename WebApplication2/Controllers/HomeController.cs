@@ -26,9 +26,7 @@ namespace WebApplication2.Controllers
             _logger = logger;
         }
 
-        public HomeController()
-        {
-        }
+        
 
         public IActionResult Index()
         {
