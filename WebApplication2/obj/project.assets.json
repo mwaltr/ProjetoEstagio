@@ -5447,24 +5447,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\walte\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Interfocus\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\git\\ProjetoEstagio\\WebApplication2\\WebApplication2.csproj",
+      "projectUniqueName": "C:\\GitHub\\Git\\ProjetoEstagio\\WebApplication2\\WebApplication2.csproj",
       "projectName": "WebApplication2",
-      "projectPath": "D:\\git\\ProjetoEstagio\\WebApplication2\\WebApplication2.csproj",
-      "packagesPath": "C:\\Users\\walte\\.nuget\\packages\\",
-      "outputPath": "D:\\git\\ProjetoEstagio\\WebApplication2\\obj\\",
+      "projectPath": "C:\\GitHub\\Git\\ProjetoEstagio\\WebApplication2\\WebApplication2.csproj",
+      "packagesPath": "C:\\Users\\Interfocus\\.nuget\\packages\\",
+      "outputPath": "C:\\GitHub\\Git\\ProjetoEstagio\\WebApplication2\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\walte\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Interfocus\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

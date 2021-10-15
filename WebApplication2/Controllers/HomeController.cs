@@ -20,20 +20,6 @@ namespace WebApplication2.Controllers
 
         public IActionResult Index()
         {
-            string login = Request.Form["login"];
-            string senha = Request.Form["senha"];
-           
-            string cs = @"server=127.0.0.1;userid=root;password=root;database=estagio";
-            using var con = new MySqlConnection(cs);
-            con.Open();
-            MySqlCommand query = new MySqlCommand();
-            query.Connection = con;
-            string sql = "SELECT * FROM Login WHERE login =" +login + " AND password ="+senha ;
-            query.CommandText = sql;
-                        
-
-            query.Prepare();
-            ViewData["mysql2"] = query.ExecuteNonQuery();
            
 
             return View();
@@ -71,6 +57,14 @@ namespace WebApplication2.Controllers
             return View();
         }
 
+        public IActionResult Login()
+        {
+            
+                
+         
+
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

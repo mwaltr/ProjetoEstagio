@@ -1,0 +1,38 @@
+﻿<div class="div-login">
+    <form action="AutenticacaoRegistro" method="post">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Login</label>
+            <input type="text" class="form-control"  name="login" placeholder="login">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Senha</label>
+            <input type="password"  class="form-control" id="senha" name="senha" onkeyup="repetirsenha()">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Repetir Senha</label>
+            <input type="password"  class="form-control" id="repetirsenha" name="repetirsenha" onkeyup="repetirsenha()">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Nome</label>
+            <input type="text" class="form-control" name="nome" placeholder="nome">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input type="email"  class="form-control" id="email" name="email" placeholder="email" onkeyup="repetiremail()">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input type="email"  class="form-control" id="repetiremail" name="repetiremail" placeholder="repetiremail"  onkeyup="repetiremail()">
+        </div>
+        <button type="submit" class="btn btn-primary">Registrar</button>
+
+
+    </form>
+    <a href="Login"><button type="button" class="btn btn-light">Cancelar</button></a>
+
+    <button onclick="alerta()"> teste</button>
+</div>
+
+
+<h1>@ViewData["List"] </h1>
